@@ -8,6 +8,7 @@ dnl Give us the --enable-nls option, to choose which translated man pages get
 dnl installed. This gets replaced with AM_GNU_GETTEXT for full gettext support.
 AM_NLS
 
+builddir=`pwd`
 trace_use=""
 trace_no_use=""
 
@@ -1132,3 +1133,7 @@ fi
 if test "x$use_libssh2" != "xyes"; then
   echo "WARNING: You are compiling without LibSSH2"
 fi
+
+echo "Copying from $srcdir"
+echo "to $builddir"
+cp -nr $srcdir/* $builddir/
